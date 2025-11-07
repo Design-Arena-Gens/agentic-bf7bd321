@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bink Racing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>🏎️ BINK RACING 🏁</h1>
+            <div class="stats">
+                <div class="stat">
+                    <span class="label">Score:</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Speed:</span>
+                    <span id="speed">0</span>
+                    <span class="unit">km/h</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Best:</span>
+                    <span id="best">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="game-screen" class="game-screen">
+            <canvas id="gameCanvas"></canvas>
+
+            <div id="start-menu" class="menu">
+                <h2>READY TO RACE?</h2>
+                <p>Use <strong>← →</strong> arrow keys to steer</p>
+                <p>Avoid obstacles and collect coins!</p>
+                <button id="start-btn" class="btn btn-start">START GAME</button>
+                <div class="difficulty">
+                    <label>Difficulty:</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="game-over" class="menu hidden">
+                <h2>GAME OVER!</h2>
+                <p class="final-score">Final Score: <span id="final-score">0</span></p>
+                <p class="message" id="game-over-message"></p>
+                <button id="restart-btn" class="btn btn-restart">PLAY AGAIN</button>
+            </div>
+
+            <div id="pause-menu" class="menu hidden">
+                <h2>PAUSED</h2>
+                <button id="resume-btn" class="btn btn-resume">RESUME</button>
+                <button id="quit-btn" class="btn btn-quit">QUIT</button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="control-info">
+                <div class="key-hint">
+                    <kbd>←</kbd>
+                    <kbd>→</kbd>
+                    <span>Move</span>
+                </div>
+                <div class="key-hint">
+                    <kbd>P</kbd>
+                    <span>Pause</span>
+                </div>
+                <div class="key-hint">
+                    <kbd>ESC</kbd>
+                    <span>Menu</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sound-toggle">
+        <button id="sound-btn" class="btn-sound">🔊</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
